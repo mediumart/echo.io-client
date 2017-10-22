@@ -1,10 +1,11 @@
 {
   "name": "echo.io-client",
   "version": "0.0.1",
-  "description": "WIP",
+  "description": "A socket.io client implementation for laravel-echo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,14 @@
   ],
   "homepage": "http://github/mediumart/echo.io-client",
   "author": "Mediumart <daprod2009@gmail.com> (https://github.com/mediumart)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "imports-loader": "^0.7.1",
+    "socket.io-client": "^2.0.3",
+    "webpack": "^3.6.0"
+  }
 }

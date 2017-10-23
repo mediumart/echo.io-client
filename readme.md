@@ -9,8 +9,8 @@ This is a socket.io server implementation for laravel-echo. It consist of 3 comp
 - A [php library](https://github.com/mediumart/echo.io-php) that handle integration with the laravel framework.
 
 ## Installation
-serve the file in the dist folder with a script tag in your html, before laravel-echo, example:
+Copy the file in the `dist` folder to the laravel `public/js` folder and serve with a script tag in your html, before serving laravel-echo, example:
 ```html
-<script src="/dist/echo.io.js"></script>
+<script src="/js/echo.io.js"></script>
 ```
 You will also need to install the others components mentionned above.

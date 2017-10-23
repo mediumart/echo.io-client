@@ -1,6 +1,6 @@
 {
   "name": "echo.io-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A socket.io client implementation for laravel-echo",
   "main": "index.js",
   "scripts": {

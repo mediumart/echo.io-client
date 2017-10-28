@@ -1,4 +1,4 @@
-module.exports = exports = (function () {
+module.exports = (function () {
     return {
         post: function (endpoint, form, config) {
             return new Promise(function (resolve, reject) {
@@ -18,20 +18,13 @@ module.exports = exports = (function () {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
                             try {
-                                resolve({
-                                    success: true,
-                                    data: JSON.parse(xhr.responseText)
-                                });
+                                resolve({ data: JSON.parse(xhr.responseText) });
                             } catch(e) {
-                                resolve({
-                                    success: true,
-                                    data: xhr.responseText
-                                });
+                                resolve({ data: xhr.responseText });
                             }
                         } else {
-                            resolve({
-                                success: false,
-                                message: 'Unauthorized access. Server responded with status: ' + xhr.status,
+                            reject({
+                                message: 'Forbidden, server responded with status: ' + xhr.status,
                                 data: xhr.responseText
                             })
                         }

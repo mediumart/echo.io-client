@@ -13,6 +13,6 @@ var echo = require('./client');
  * 
  * @api public     
  */
-module.exports = exports = function (host, options) {
+module.exports = function (host, options) {
     return echo.io(host, options);
 }

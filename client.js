@@ -80,21 +80,14 @@ function authorizeBeforeSubscribe(scope, request) {
             var status = response.data;
             
             if (status) {
-                emitProxy(
-                    'subscribe', {
-                        channel: request.channel, 
-                        key: status
-                        //status: status.channel_data ? status.channel_data : status
-                    }
-                );
-            } else {
-                // emitProxy('access-denied', echo.socket.id, request.channel);
+                emitProxy('subscribe', { 
+                    channel: request.channel, 
+                    key: status 
+                });
             }
-        })
-        .catch(function (error) {
-            console.error(error);
-
-            emitProxy('access-error', echo.socket.id, request.channel);   
+        }).catch(function (error) {
+            // console.error(error);
+            // emitProxy('access-error', echo.socket.id, request.channel);   
         });
 }
 
@@ -136,4 +129,4 @@ var echo = new Echo();
  * 
  * @type {Echo}
  */
-module.exports = exports = echo;
+module.exports = echo;
